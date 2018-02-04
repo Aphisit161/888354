@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script type="text/javascript">
+
+      function SearchText(){
+        var textarea = document.getElementById("Text").value;
+        var Select = document.querySelector("input[name='radio']:checked").value;
+        var SearchT = document.getElementById("word").value;
+        var word = textarea.split(" ");
+        var count = 0;
+
+      console.log(word[0]);
+      console.log(SearchT);
+      console.log(Select);
+      console.log(count);
+
+
+      if(Select == "Yes"){
+
+        for(var i = 0 ;i <word.length  ; i++){
+
+          if(word[i]==SearchT){
+            count++;
+
+          }
+        }
+      }else {
+        for(var i = 0 ;i <word.length  ; i++){
+          if(word[i].toUpperCase()==SearchT.toUpperCase()){
+            count++;
+
+          }
+        }
+      }
+      document.getElementById("result").innerHTML = count;
+      }
+  </script>
+</head>
+
+
+<body>
+  <center>
+    <p>Ex2 - Search String Non Sensitive Case</p>
+  <hr>
+  <div class="row">
+
+          Text Input :<textarea name="name" rows="8" cols="80" id="Text"></textarea>
+  </div>
+  <br>
+  <div class="row">
+
+          Sensitive Case :Yes <input type="radio" name="radio" value="Yes" checked>
+                          No <input type="radio" name="radio" value="No">
+  </div>
+  <br>
+  <div class="row">
+      Search : <input type="text" name="" value="" id="word">
+  </div>
+    <br>
+    <div >
+        Search : <button onclick="SearchText()">Search</button>
+    </div>
+    <br>
+      <div id="result">
+
+      </div>
+
+
+</body>
+
+</html>
